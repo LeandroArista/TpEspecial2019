@@ -2,31 +2,32 @@ package Granja;
 
 import java.util.ArrayList;
 
-public class Establecimiento extends ElemGranja {
+public class Conjunto extends ElemGranja {
 	
-	ArrayList<ElemGranja> lista;
-	public Establecimiento() {
-		this.lista=new ArrayList<ElemGranja>();
+	ArrayList<ElemGranja> animales;
+	public Conjunto() {
+		this.animales=new ArrayList<ElemGranja>();
 	}
 	
 	public void add(ElemGranja e) {
-		this.lista.add(e);
+		this.animales.add(e);
 	}
 	
 	public int getCantidad() {
 		int cont=0;
-		for(int i=0;i<lista.size();i++) {
-			cont+=lista.get(i).getCantidad();
+		for(int i=0;i<animales.size();i++) {
+			cont+=animales.get(i).getCantidad();
 		}
 		
 		return cont;
 	}
-	
+
+	@Override
 	public double getPromedio() {
 		int cantidad=this.getCantidad();
 		int cont=0;
-		for(int i=0;i<lista.size();i++) {
-			cont+=lista.get(i).getPromedio();
+		for(int i=0;i<animales.size();i++) {
+			cont+=animales.get(i).getPromedio();
 		}
 		
 		return cont/cantidad;
@@ -37,16 +38,17 @@ public class Establecimiento extends ElemGranja {
 		int cantidad=this.getCantidad();
 		double cont=this.getPeso();
 		
+		
 		return cont/cantidad;
 	}
-
-	@Override
+	
 	public double getPeso() {
 		int cont=0;
-		for(int i=0;i<lista.size();i++) {
-			cont+=lista.get(i).getPeso();
+		for(int i=0;i<animales.size();i++) {
+			cont+=animales.get(i).getPeso();
 		}
 		return cont;
+		
 	}
 
 	@Override
@@ -54,5 +56,9 @@ public class Establecimiento extends ElemGranja {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
+	
+	
 
 }
